@@ -15,4 +15,6 @@ Los oyentes van a poder interactuar con el orador mediante un chat interno
 Se tendra la posibilidad de cargar "Eventos Sociales" a realizar durante el Evento que nada tengan que ver con el topico principal. Por ej: que una de las empresas organizadoras arme un After, un encuentro deportivo, etc, etc.
 Se podra visualizar el mapa para llegar al lugar al igual quien esta presente en dicho lugar
 
+De acuerdo a las preferencias y/o cercania del evento se genera un alerta al usuario, ya sea para una evento nuevo, sorteo, charla.
+
 Se podra mediante la app interactuar con twitter e ir visualizando todas las publicaciones con el hastag del evento (se debera tener twitter instalado en el celudar)
