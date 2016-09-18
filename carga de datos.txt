@@ -1,0 +1,69 @@
+for each
+	defined by CompanyName
+	exit	
+when none
+	// Master Data
+	
+	//Geolocation Insert
+	&Maps = DPMap()
+	For &Map in &Maps
+		&Map.Save()
+	endfor
+	commit
+	
+	//Event Preferences Insert
+	&EventPreferences = DPEventPreferences()
+	For &EventPreference in &EventPreferences
+		&EventPreference.Save()
+	endfor
+	commit
+
+	//Bulk Company Insert
+	&Companies = DPCompany()
+	For &Company in &Companies
+		&Company.Save()
+	endfor
+	commit
+	
+	//Bulk Countries Insert
+	&Countries = DPCountry()
+	For &Country in &Countries
+		&Country.Save()
+	endfor
+	commit
+	
+	//Bulk Rooms Insert
+	&Rooms = DPRoom()
+	For &Room in &Rooms
+		&Room.Save()
+	endfor
+	commit
+	
+	//Bulk Tracks Insert
+	&Tracks = DPTrack()
+	For &Track in &Tracks
+		&Track.Save()
+	endfor
+	commit
+	
+	//Bulk Speakers Insert
+	&Speakers = DPSpeaker()
+	For &Speaker in &Speakers
+		&Speaker.Save()
+	endfor
+	commit
+	
+	//Bulk Juries Insert
+	&Juries = DPJury()
+	For &Jury in &Juries
+		&Jury.Save()
+	endfor
+	commit
+	
+//	Bulk Sessions Insert
+	&Sessions = DPSession()
+	For &Session in &Sessions
+		&Session.Save()
+	endfor
+	commit
+endfo
