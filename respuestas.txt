@@ -1,0 +1,21 @@
+Event 'Save'
+	Composite
+		GeneXus.SD.Actions.Save()
+		return
+	EndComposite
+EndEvent
+
+Event 'Cancel'
+	GeneXus.SD.Actions.Cancel()
+EndEvent
+
+Event 'Update'
+	WorkWithDevicesAnswer.Answer.Detail.Update(AnswerId)
+EndEvent
+
+Event 'Delete'
+	Composite
+		WorkWithDevicesAnswer.Answer.Detail.Delete(AnswerId)
+		return
+	EndComposite
+EndEvent
