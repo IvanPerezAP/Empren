@@ -1,0 +1,48 @@
+Event Start
+	&expanded = false	
+Endevent
+
+Event Load
+	//Dynamic Class Loading based on the Session Track
+//	GetSessionTracks(SessionID,&SessionTracks,&TrackClassID)
+//	Track.Class = 'Table.Track.'+&TrackClassID.Trim()
+//	Session.Class = 'Table.Track.'+&TrackClassID.Trim()+ '.Session'
+//	&SessionTracks.Class = 'Attribute.Tracks.'+&TrackClassID.Trim()
+	
+	GetSessionTracks(SessionID,&SessionTracks,&TrackClassID)
+	Track.Class = 'TableTrack'+&TrackClassID.Trim()
+	Session.Class = 'TableTrack'+&TrackClassID.Trim()+ 'Session'
+	&SessionTracks.Class = 'AttributeTracks'+&TrackClassID.Trim()	
+EndEvent
+
+Event 'SessionDetail'
+	WorkWithDevicesSession.Session.Detail(SessionID)
+EndEvent
+
+Event 'expand'
+	Composite
+		if &expanded
+			MapTable.Class = "TableMapCollapsed"
+			expand.Class = "MapDown"
+			&expanded = false
+		else
+			MapTable.Class = "TableMapExpanded"
+			expand.Class = "MapUp"
+			&expanded = true
+		endif
+	Endcomposite
+Endevent
+
+Event 'expandAndroid'
+	Composite
+		if &expanded
+			RoomMap.Visible = false
+			expand.Class = "MapDown"
+			&expanded = false
+		else
+			RoomMap.Visible = true
+			expand.Class = "MapUp"
+			&expanded = true
+		endif
+	Endcomposite
+Endevent
